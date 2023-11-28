@@ -14,18 +14,23 @@
 
 <body>
     <!--implementazione vue-js-->
-    <div id="app">
+    <div id="app" v-cloak>
         <!--header-->
         <header>
             <div class="container">
                 <h1 class="text-center mt-3">Todo list</h1>
-            </div>       
+            </div>
         </header>
         <!--main-->
         <main>
             <ul class="list-group text-center col-5 mx-auto mt-5">
-                <li class="list-group-item">An item</li>
-              </ul>
+                <li v-for="todo in lista" class="list-group-item">
+                    <div :class="todo.fatto === true ? 'text-decoration-line-through' : ''">
+                        {{todo.testo}}
+                    </div>
+                    
+                </li>
+            </ul>
         </main>
     </div>
     <!--vue js-->
