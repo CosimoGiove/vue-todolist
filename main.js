@@ -18,12 +18,20 @@ createApp({
                 fatto:true,
             },
 
-        ]
+        ],
+        coseDaFare:"",
     }
   },
   methods:{
-    rimosso(){
-        this.lista.splice(this.fatto,1)
+    rimosso(index){
+        this.lista.splice(index, 1);
+    },
+    invio(){
+        this.lista.push({
+            testo: this.coseDaFare,
+            fatto: true,
+        });
+        this.coseDaFare = '';
     }
   }
 }).mount('#app');
