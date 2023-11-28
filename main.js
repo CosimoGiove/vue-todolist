@@ -22,5 +22,8 @@ createApp({
     }
   },
   methods:{
+    rimosso(){
+        this.lista.splice(this.fatto,1)
+    }
   }
 }).mount('#app');
